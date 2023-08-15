@@ -37,9 +37,12 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Articles
                             </a>
-                            <div class="dropdown-menu"> <a class="dropdown-item" href="travel.html">Travel</a>
-                                <a class="dropdown-item" href="travel.html">Lifestyle</a>
-                                <a class="dropdown-item" href="travel.html">Cruises</a>
+                            <div class="dropdown-menu">
+                                @foreach ($categories as $cat)
+                                <a class="dropdown-item" href="travel.html">{{$cat->name}}</a>
+
+                                @endforeach
+
                             </div>
                         </li>
                         <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a>
@@ -90,8 +93,8 @@
                                         <div class="widget-body">
                                             <img loading="lazy" decoding="async" src="{{asset('images/author.jpg')}}"
                                                 alt="About Me" class="w-100 author-thumb-sm d-block">
-                                            <h2 class="widget-title my-3">Hootan Safiyari</h2>
-                                            <p class="mb-3 pb-2">Hello, I’m Hootan Safiyari. A Content writter,
+                                            <h2 class="widget-title my-3">Akila Santhush</h2>
+                                            <p class="mb-3 pb-2">Hello, I’m GAS Perera. A Content writter,
                                                 Developer and Story teller. Working as a Content writter at CoolTech
                                                 Agency. Quam nihil …</p> <a href="about.html"
                                                 class="btn btn-sm btn-outline-primary">Know
@@ -110,57 +113,31 @@
                                                                 read</span>
                                                         </div>
                                                         <img loading="lazy" decoding="async"
-                                                            src="{{asset('images/post/post-9.jpg')}}" alt="Post Thumbnail"
+                                            src="{{ asset('storage/'.$sideposts[0]->image) }}" alt="Post Thumbnail"
                                                             class="w-100">
                                                     </div>
                                                     <div class="card-body px-0 pb-1">
                                                         <h3><a class="post-title post-title-sm"
-                                                                href="article.html">Portugal and France Now
-                                                                Allow Unvaccinated Tourists</a></h3>
-                                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing elit, sed do eiusmod tempor …</p>
+                                                                href="{{route('blog.post.show',$sideposts[0]->id)}}">{{$sideposts[0]->title}}</a></h3>
+                                                        <p class="card-text"> {{ Str::limit(strip_tags($sideposts[0]->content), 2 * 150) }}</p>
                                                         <div class="content"> <a class="read-more-btn"
-                                                                href="article.html">Read Full Article</a>
+                                                                href="{{route('blog.post.show',$sideposts[0]->id)}}">Read Full Article</a>
                                                         </div>
                                                     </div>
                                                 </article>
-                                                <a class="media align-items-center" href="article.html">
-                                                    <img loading="lazy" decoding="async" src="{{asset('images/post/post-2.jpg')}}"
+                                                @for ($i=1;$i<5;$i++)
+                                                <a class="media align-items-center" href="{{route('blog.post.show',$sideposts[$i]->id)}}">
+                                                    <img loading="lazy" decoding="async" src="{{ asset('storage/'.$sideposts[$i]->image) }}"
                                                         alt="Post Thumbnail" class="w-100">
                                                     <div class="media-body ml-3">
-                                                        <h3 style="margin-top:-5px">These Are Making It Easier To Visit
+                                                        <h3 style="margin-top:-5px">{{$sideposts[$i]->title}}
                                                         </h3>
-                                                        <p class="mb-0 small">Heading Here is example of hedings. You
-                                                            can use …</p>
+                                                        {{-- <p class="mb-0 small">{{ Str::limit(strip_tags($sideposts[$i]->content), 1 * 150) }}</p> --}}
                                                     </div>
                                                 </a>
-                                                <a class="media align-items-center" href="article.html"> <span
-                                                        class="image-fallback image-fallback-xs">No Image
-                                                        Specified</span>
-                                                    <div class="media-body ml-3">
-                                                        <h3 style="margin-top:-5px">No Image specified</h3>
-                                                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing …</p>
-                                                    </div>
-                                                </a>
-                                                <a class="media align-items-center" href="article.html">
-                                                    <img loading="lazy" decoding="async" src="{{asset('images/post/post-5.jpg')}}"
-                                                        alt="Post Thumbnail" class="w-100">
-                                                    <div class="media-body ml-3">
-                                                        <h3 style="margin-top:-5px">Perfect For Fashion</h3>
-                                                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing …</p>
-                                                    </div>
-                                                </a>
-                                                <a class="media align-items-center" href="article.html">
-                                                    <img loading="lazy" decoding="async" src="{{asset('images/post/post-9.jpg')}}"
-                                                        alt="Post Thumbnail" class="w-100">
-                                                    <div class="media-body ml-3">
-                                                        <h3 style="margin-top:-5px">Record Utra Smooth Video</h3>
-                                                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur
-                                                            adipiscing …</p>
-                                                    </div>
-                                                </a>
+
+                                                @endfor
+
                                             </div>
                                         </div>
                                     </div>

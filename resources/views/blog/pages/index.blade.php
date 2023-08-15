@@ -23,9 +23,9 @@
 
               </li>
             </ul>
-            <h2 class="h1"><a class="post-title" href="article.html">{{$posts[0]->title}}</a></h2>
+            <h2 class="h1"><a class="post-title" href="{{route('blog.post.show',$posts[0]->id)}}">{{$posts[0]->title}}</a></h2>
             <p class="card-text">{{ Str::limit(strip_tags($posts[0]->content), 3 * 150) }}</p>
-            <div class="content"> <a class="read-more-btn" href="article.html">Read Full Article</a>
+            <div class="content"> <a class="read-more-btn" href="{{route('blog.post.show',$posts[0]->id)}}">Read Full Article</a>
             </div>
           </div>
         </article>
@@ -50,9 +50,9 @@ $readingTime = ceil($wordCount / 200);
               <li> <a href="#!">{{ $posts[$i]->category->name }}</a>
               </li>
             </ul>
-            <h2><a class="post-title" href="article.html">{{$posts[$i]->title}}</a></h2>
+            <h2><a class="post-title" href="{{route('blog.post.show',$posts[$i]->id)}}">{{$posts[$i]->title}}</a></h2>
             <p class="card-text">{{ Str::limit(strip_tags($posts[$i]->content), 2 * 150) }}</p>
-            <div class="content"> <a class="read-more-btn" href="article.html">Read Full Article</a>
+            <div class="content"> <a class="read-more-btn" href=""{{route('blog.post.show',$posts[$i]->id)}}"">Read Full Article</a>
             </div>
           </div>
         </article>

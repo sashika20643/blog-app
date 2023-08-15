@@ -10,16 +10,23 @@ class BlogController extends Controller
 {
       public function index()
     {
-        $posts = Post::with('category')->orderBy('created_at', 'desc')->paginate(9);
+        $posts = Post::with('category')->orderBy('created_at', 'desc')->paginate(7);
         $categories=Category::all();
+        $sideposts = Post::with('category')
+    ->inRandomOrder()
+    ->limit(5)
+    ->get();
 
-        return view('blog.pages.index', compact('categories','posts'));
+        return view('blog.pages.index', compact('categories','posts','sideposts'));
     }
     public function showPost($id)
     {
         $post = Post::findOrFail($id);
         $categories=Category::all();
-
-        return view('blog.pages.post', compact('post','categories'));
+        $sideposts = Post::with('category')
+        ->inRandomOrder()
+        ->limit(5)
+        ->get();
+        return view('blog.pages.post', compact('post','categories','sideposts'));
     }
 }
