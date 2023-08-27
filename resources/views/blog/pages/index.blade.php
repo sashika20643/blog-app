@@ -52,7 +52,7 @@ $readingTime = ceil($wordCount / 200);
             </ul>
             <h2><a class="post-title" href="{{route('blog.post.show',$posts[$i]->id)}}">{{$posts[$i]->title}}</a></h2>
             <p class="card-text">{{ Str::limit(strip_tags($posts[$i]->content), 2 * 150) }}</p>
-            <div class="content"> <a class="read-more-btn" href=""{{route('blog.post.show',$posts[$i]->id)}}"">Read Full Article</a>
+            <div class="content"> <a class="read-more-btn" href="{{route('blog.post.show',$posts[$i]->id)}}">Read Full Article</a>
             </div>
           </div>
         </article>
