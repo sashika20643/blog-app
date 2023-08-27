@@ -20,7 +20,7 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('blog.show'));
 });
 
 Route::prefix('dashboard')->middleware('auth')->group(function () {

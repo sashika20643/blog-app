@@ -150,7 +150,7 @@
                                             <ul class="widget-list">
 @foreach ($categories as $category )
 
-<li><a href="#!">{{$category->name}}<span class="ml-auto">(3)</span></a>
+<li><a href="{{route('blog.cat.show',$category->id)}}">{{$category->name}}<span class="ml-auto"></span></a>
 </li>
 @endforeach
 
