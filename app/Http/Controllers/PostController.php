@@ -5,11 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\models\Post;
 use App\Models\Category;
+use App\Models\Contact;
+
 use Illuminate\Support\Facades\Storage;
 
 
 class PostController extends Controller
 {
+public function indexpage(){
+    $totalposts = Post::count();
+    $categories = Category::count();
+    $message=Contact::count();
+
+    return view('Admin.pages.index',compact('totalposts','categories','message'));
+
+
+}
+
     public function index()
     {
         $posts = Post::with('category')->get();

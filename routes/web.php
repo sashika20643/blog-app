@@ -24,9 +24,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('dashboard')->middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('Admin.pages.index');
-    });
+    Route::get('/', [PostController::class, 'indexpage'])->name('dash.index');
+
 
     //..................routes for categories............................
     Route::prefix('categories')->group(function () {
