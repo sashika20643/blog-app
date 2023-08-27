@@ -49,6 +49,13 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
         Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
     });
 
+
+    //.....................contacts................................
+    Route::prefix('contacts')->group(function () {
+        Route::get('/', [ContactController::class, 'index'])->name('Contacts.index');
+
+
+    });
     //.........................posts Routes .....................................
     Route::prefix('posts')->group(function () {
 

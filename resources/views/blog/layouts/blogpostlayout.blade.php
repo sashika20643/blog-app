@@ -97,7 +97,7 @@
                                             <h2 class="widget-title my-3">Akila Santhush</h2>
                                             <p class="mb-3 pb-2">Hello, I’m GAS Perera. A Content writter,
                                                 Developer and Story teller. Working as a Content writter at CoolTech
-                                                Agency. Quam nihil …</p> <a href="about.html"
+                                                Agency. Quam nihil …</p> <a href="{{route('blog.aboutme')}}"
                                                 class="btn btn-sm btn-outline-primary">Know
                                                 More</a>
                                         </div>

@@ -7,6 +7,13 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
+
+
+    public function index()
+    {
+        $contacts = Contact::all();
+        return view('Admin.pages.contact.index', compact('contacts'));
+    }
     public function contactstore(Request $request){
         $request->validate([
             'name' => 'required|',
