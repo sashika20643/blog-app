@@ -47,4 +47,16 @@ class BlogController extends Controller
 
         return view('blog.pages.contact',compact('categories','sideposts'));
     }
+
+    public function showcat($id)
+    {
+        $posts = Post::with('category')->where('category_id',$id)->orderBy('created_at', 'desc')->paginate(7);
+        $categories=Category::all();
+        $sideposts = Post::with('category')
+    ->inRandomOrder()
+    ->limit(5)
+    ->get();
+
+        return view('blog.pages.cat', compact('categories','posts','sideposts'));
+    }
 }

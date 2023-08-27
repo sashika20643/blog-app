@@ -19,7 +19,7 @@ class ContactController extends Controller
             'name' => $request->name,
             'content' => $request->content,
             'email' => $request->email,
-            'subject' => $request->name,
+            'subject' => $request->subject,
         ]);
 
         return redirect()->back();

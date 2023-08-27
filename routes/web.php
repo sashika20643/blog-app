@@ -81,6 +81,8 @@ Route::prefix('/blog')->group(function () {
     Route::get('/', [BlogController::class, 'index'])->name('blog.show');
 
     Route::get('post/{id}', [BlogController::class, 'showPost'])->name('blog.post.show');
+    Route::get('category/{id}', [BlogController::class, 'showcat'])->name('blog.cat.show');
+
     Route::get('/about', [BlogController::class, 'about'])->name('blog.aboutme');
     Route::get('/contact', [BlogController::class, 'contact'])->name('blog.contact');
     Route::post('/contact/store', [ContactController::class, 'contactstore'])->name('blog.contactstore');

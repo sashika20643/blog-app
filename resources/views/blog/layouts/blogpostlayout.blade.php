@@ -18,7 +18,7 @@
     <header class="navigation">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light px-0">
-                <a class="navbar-brand order-1 py-0" href="index.html">
+                <a class="navbar-brand order-1 py-0" href="/">
                     <img loading="prelaod" decoding="async" class="img-fluid" src="{{asset('images/logo.png')}}" alt="Reporter Hugo">
                 </a>
                 <div class="navbar-actions order-3 ml-0 ml-md-4">
@@ -39,7 +39,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 @foreach ($categories as $cat)
-                                <a class="dropdown-item" href="travel.html">{{$cat->name}}</a>
+                                <a class="dropdown-item" href="{{route('blog.cat.show',$cat->id)}}">{{$cat->name}}</a>
 
                                 @endforeach
 
