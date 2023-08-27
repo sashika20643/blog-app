@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+
 
 
 /*
@@ -76,9 +78,14 @@ Route::prefix('dashboard')->middleware('auth')->group(function () {
 
 
 Route::prefix('/blog')->group(function () {
-    Route::get('', [BlogController::class, 'index'])->name('blog.show');
+    Route::get('/', [BlogController::class, 'index'])->name('blog.show');
 
     Route::get('post/{id}', [BlogController::class, 'showPost'])->name('blog.post.show');
+    Route::get('/about', [BlogController::class, 'about'])->name('blog.aboutme');
+    Route::get('/contact', [BlogController::class, 'contact'])->name('blog.contact');
+    Route::post('/contact/store', [ContactController::class, 'contactstore'])->name('blog.contactstore');
+
+
 
 
 

@@ -29,4 +29,22 @@ class BlogController extends Controller
         ->get();
         return view('blog.pages.post', compact('post','categories','sideposts'));
     }
+
+    public function about(){
+        $categories=Category::all();
+        $sideposts = Post::with('category') ->inRandomOrder()
+        ->limit(5)
+        ->get();
+
+        return view('blog.pages.about',compact('categories','sideposts'));
+    }
+
+    public function contact(){
+        $categories=Category::all();
+        $sideposts = Post::with('category') ->inRandomOrder()
+        ->limit(5)
+        ->get();
+
+        return view('blog.pages.contact',compact('categories','sideposts'));
+    }
 }
