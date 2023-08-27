@@ -86,7 +86,7 @@ Route::prefix('/blog')->group(function () {
     Route::get('/about', [BlogController::class, 'about'])->name('blog.aboutme');
     Route::get('/contact', [BlogController::class, 'contact'])->name('blog.contact');
     Route::post('/contact/store', [ContactController::class, 'contactstore'])->name('blog.contactstore');
-
+    Route::post('/posts/search', [PostController::class, 'search'])->name('posts.search');
 
 
 
