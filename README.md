@@ -16,4 +16,5 @@ Features:
     Rich Text Formatting: Support for rich text formatting to make blog posts visually engaging.
     Commenting System: Engage with readers through a built-in commenting system for each post.
     Responsive Design: Ensures a seamless experience across various devices and screen sizes.
-    ![FireShot Capture 005 - Reporter - HTML Blog Template - 127 0 0 1](https://github.com/sashika20643/blog-app/assets/73024901/a3baf007-ef0d-4728-bfd5-09a2c4552b18)
+
+![blog](https://github.com/sashika20643/blog-app/assets/73024901/d8128267-1b06-4913-87bf-d4989fc20009)
